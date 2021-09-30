@@ -1,0 +1,193 @@
+// date, ip, rooturl, sitename
+// uid, name, login
+
+[_header]
+Hello, #name#!
+
+[_footer]
+Best regards, <a href="#rooturl#">#sitename#</a> team
+
+[PassChanged.topic]
+Password reset
+// pass
+[PassChanged.message]
+Your password is reseted
+Your login: #login#
+Your new temporary password: #pass#
+
+[PassChanged2.topic]
+Password changed
+// pass
+[PassChanged2.message]
+Your password is changed
+Your login: #login#
+Your new password: #pass#
+
+[MailChanged.topic]
+E-mail confirmed
+//
+[MailChanged.message]
+This e-mail used for account "#login#"
+
+[AskConfirmRSTPASS.topic]
+Password change confirmation
+// code, url
+[AskConfirmRSTPASS.message]
+To confirm the password reset for your account "#login#" use this code: <b>#code#</b>
+Or simply go to <a href="#url#?code=#code#">link</a>
+
+[AskConfirmCHGMAIL.topic]
+E-mail change confirmation
+// code, url
+[AskConfirmCHGMAIL.message]
+To confirm this e-mail for your account "#login#" use this code: <b>#code#</b>
+Or simply go to <a href="#url#?code=#code#">link</a>
+
+[AskConfirmSECLOGIN.topic]
+IP changed
+// code, url
+[AskConfirmSECLOGIN.message]
+Your IP changed.
+To confirm login to account "#login#" use this code: <b>#code#</b>
+Or simply go to <a href="#url#?code=#code#">link</a>
+
+[AskConfirmBFLOGIN.topic]
+Login confirmation
+// code, url
+[AskConfirmBFLOGIN.message]
+Account password was entered incorrectly multiple times.
+To confirm login to account "#login#" use this code: <b>#code#</b>
+Or simply go to <a href="#url#?code=#code#">link</a>
+
+[AskConfirmREG.topic]
+Registration confirmation
+// code, url
+[AskConfirmREG.message]
+To confirm registration of account "#login#" use this code: <b>#code#</b>
+Or simply go to <a href="#url#?code=#code#">link</a>
+
+[RegComplete.topic]
+Registration complete
+// pin
+[RegComplete.message]
+Thank you for registering in our website #sitename#!
+Your login: #login#
+//Your PIN-code: #pin#
+
+[RegComplete2.topic]
+Quick registration
+// pass, pin
+[RegComplete2.message]
+Thank you for registering in our website #sitename#!
+Your login: #login#
+Your password: #pass#
+//Your PIN-code: #pin#
+
+[NewRef.topic]
+You have new referral
+// reflogin
+[NewRef.message]
+You have new referral - #reflogin#
+
+
+
+// All operations: oid, oper, cid, sum, curr, psys, cid2, sum2, curr2, psys2, params(), url
+
+[OperBONUS.topic]
+Bonus
+[OperBONUS.message]
+You received a bonus #sum# #curr# #psys#
+To see the details of this operation go <a href="#url#?id=#oid#">link</a>
+
+[OperPENALTY.topic]
+Penalty
+[OperPENALTY.message]
+You are fined by #sum# #curr# #psys#
+To see the details of this operation go <a href="#url#?id=#oid#">link</a>
+
+[OperCASHIN.topic]
+Add balance
+[OperCASHIN.message]
+Your balance is increased by #sum# #curr# #psys#
+To see the details of this operation go <a href="#url#?id=#oid#">link</a>
+
+[OperCASHOUT.topic]
+Withdraw
+[OperCASHOUT.message]
+On your wallet #acc# #psys# withdrawn #sum# #curr# (batch: #batch#)
+To see the details of this operation go <a href="#url#?id=#oid#">link</a>
+
+[OperEX.topic]
+Exchange
+[OperEX.message]
+You exchanged #sum# #curr# #psys# to #sum2# #curr2# #psys2# rate of 1:#course# (batch: #batch#)
+To see the details of this operation go <a href="#url#?id=#oid#">link</a>
+
+[OperTR.topic]
+Transfer
+[OperTR.message]
+Your transfer #sum# #curr# #psys# is made to user "#to#" (batch: #batch#)
+To see the details of this operation go <a href="#url#?id=#oid#">link</a>
+
+[OperTRIN.topic]
+Receiving funds
+[OperTRIN.message]
+Receiving funds #sum# #curr# #psys# from user "#from#" (batch: #batch#)
+To see the details of this operation go <a href="#url#?id=#oid#">link</a>
+
+[OperREF.topic]
+Referral bonus
+[OperREF.message]
+Referral bonus #sum# #curr# #psys# (referral: #reflogin#)
+To see the details of this operation go <a href="#url#?id=#oid#">link</a>
+
+[OperGIVE.topic]
+Deposit
+[OperGIVE.message]
+You have deposit ##tag# on #sum# #curr# #psys#
+To see the details of this operation go <a href="#url#?id=#oid#">link</a>
+
+[OperTAKE.topic]
+Taking
+[OperTAKE.message]
+#sum# #curr# #psys# returned to you from deposit ##tag#
+To see the details of this operation go <a href="#url#?id=#oid#">link</a>
+
+[OperCALCIN.topic]
+Accrual
+[OperCALCIN.message]
+You will accrued #sum# #curr# #psys# from deposit ##tag#
+To see the details of this operation go <a href="#url#?id=#oid#">link</a>
+
+[OperCALCOUT.topic]
+Debit
+[OperCALCOUT.message]
+With your balance debited by #sum# #curr# #psys#
+To see the details of this operation go <a href="#url#?id=#oid#">link</a>
+
+
+
+// Messages
+
+[Notice.topic]
+You received a notice
+//
+[Notice.message]
+You received a notice with topic "#topic#" from user "#from#"
+To see the details go <a href="#url#?id=#id#">link</a>
+
+[NoticeToMail.topic]
+#topic#
+//
+[NoticeToMail.message]
+#message#
+
+[NoticeToMailRe.topic]
+Answer the question
+//
+[NoticeToMailRe.message]
+Topic: #topic#
+#message#
+
+-----
+#remessage#

@@ -1,0 +1,7 @@
+[RegComplete.topic]
+Регистрация завершена
+// pin
+[RegComplete.message]
+Спасибо за регистрацию на нашем сайте #sitename#!
+Ваш логин: #login#
+Ваш PIN-код: #pin#

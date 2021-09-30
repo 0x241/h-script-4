@@ -1,0 +1,1 @@
+{include file='header.tpl' title=$_TRANS['Interface']}<h1>{$_TRANS['Select interface']}</h1>{include file='edit.tpl'	url='*'	fields=[		'lang'=>			[				'S',				'Language',				0,				[					'en'=>'English',					'ru'=>'Русский'				],				'default'=>$smarty.session._lang			]	]	btn_text=$_TRANS['Select']}{include file='footer.tpl'}

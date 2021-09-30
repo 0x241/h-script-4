@@ -1,0 +1,112 @@
+Загрузка изображений в CKEDITOR
+Чт, 03/15/2012 - 08:48 - Dice
+
+Для загрузки изображений посредством CKEDITOR следует в конфиге указать путь до скрипта, который загружает изображения:
+
+    CKEDITOR.editorConfig = function( config )
+    {
+    config.filebrowserUploadUrl = 'upload.php';
+    };
+
+Сам же upload.php будет выглядеть стандартно, за исключением того, что мы выводим через echo - собственно, выводится скрипт, который заставляет вкладку загрузки изображения переключаться на вкладку, где указывается путь и другие параметры изображения.
+
+    $uploaddir = 'images';
+    $file_Name = $_FILES[$file]["name"];
+    $file_TmpName = $_FILES[$file]["tmp_name"];
+    $uploadfile = $uploaddir .'/'. $_FILES[$file]["tmp_name"];
+     
+    move_uploaded_file($file_TmpName, $uploadfile);
+     
+    $callback = $_REQUEST['CKEditorFuncNum'];
+     
+    $full_path = '/images/'.$file_Name;
+    echo '<script type="text/javascript">window.parent.CKEDITOR.tools.callFunction("'.$callback.'", "'.$full_path.'","Файл загружен" );</script>';
+
+
+
+
+
+
+
+
+
+
+
+1. Скачиваем и устанавливаем последнюю версию CKEditor (не FCKEditor,  кстати, кто не в курсе  CKEditor и FCKEditor 
+это одно и то же по сути, раньше он назывался FCKEditor, но автор решил его переименовать, т.к. FCK похое на аббревиатуру слова "fuck" :)) ).
+
+
+2. Идем в /ckeditor/plugins/image/dialogs/image.js, находим строчку id:'Upload',hidden:true и меняем ее на id:'Upload',hidden:false.  Теперь если зайти на диалоговое око Image в окне редактора, то там должна появится 
+вкладка 'Upload'  с кнопками  'Browse'  и  'Send it to server'.  
+Теперь можно выбирать файл на диске и нажимать кнопку 'Send it to server'. Естественно при этом ничего происходить не должно, и это праивильно. 
+
+
+3. Далее, добавляем в конфиге редактора путь к обработчику наших загрузок (в нашел случае пусть это будет php скрипт). 
+В файле /ckeditor/config.js пишем 1 строчку:
+CKEDITOR.editorConfig = function( config )
+{
+// Define changes to default configuration here. For example:
+// config.language = 'fr';
+// config.uiColor = '#AADC6E';
+  config.filebrowserUploadUrl = '../ckupload.php';
+};    
+Где '../ckupload.php' собственно путь к обработчику загруженных файлов.
+Вычислить правильность пути, можно нажав на кнопку 'Send it to server' при открытой вкладке Net в Firebug. Вы должны добиться того, чтобы из php скрипта приходил ответ на ваш запрос. 
+
+
+4. В обработчике  ckupload.php пишем:
+
+
+
+<?php
+    $callback = $_GET['CKEditorFuncNum'];
+    $file_name = $_FILES['upload']['name'];
+    $file_name_tmp = $_FILES['upload']['tmp_name'];
+    $file_new_name = '/var/www/ckeditortest/upload/';
+    $full_path = $file_new_name.$file_name;
+    $http_path = '/upload/'.$file_name;
+    $error = '';
+    if( move_uploaded_file($file_name_tmp, $full_path) ) {
+    } else {
+     $error = 'Some error occured please try again later';
+     $http_path = '';
+    }
+    echo "<script type=\"text/javascript\">window.parent.CKEDITOR.tools.callFunction(".$callback.",  \"".$http_path."\", \"".$error."\" );</script>";
+?>
+
+5. Всё. По идее у вас все должно заработать.  В скрипте ничего военного, обычная загрузка файла на сервер в указанную папку. 
+Единственное, что скрипт печатает это:  "<script type=\"text/javascript\">window.parent.CKEDITOR.tools.callFunction(".$callback.",  \"".$http_path."\", \"".$error."\" );</script>";
+
+
+Где $callback это имя функции, которое приходит в файл в массиве $_GET[], 
+    $http_path - путь к картинке, котрая тут же покажется в превью.
+    $error - возможные ошибки. Если что-то пошло не так, вы увидите алерт с 
+    текстом ошибки. 
+
+
+Всем спасибо, надеюсь у вас всё получится))
+
+
+
+
+
+
+
+http://webformyself.com/ustanovka-vizualnogo-redaktora-s-fajlovym-menedzherom/
+
+
+
+
+
+
+<form id="form1" name="form1" method="post" action="">
+<textarea name="editor1" id="editor1" cols="45" rows="5"></textarea>
+<script type="text/javascript">
+CKEDITOR.replace( 'editor1');
+</script>
+</form>
+
+
+
+
+<script type="text/javascript" src="ckeditor/ckeditor.js"></script>

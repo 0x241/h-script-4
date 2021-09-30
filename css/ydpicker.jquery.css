@@ -1,0 +1,84 @@
+.cfix:after, .clear {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  *zoom: 1;
+}
+
+.ydpicker-calendar {
+    position: absolute;
+    background: white;
+}
+.ydpicker-wrapper {
+    display: inline-block;
+    font: 12px/22px Arial, Tahoma, sans-serif;
+    border: 1px solid #d9d9d9;
+    padding: 10px 0;
+}
+.ydpicker-calendar.ydpicker-wrapper {display: none;}
+.ydpicker-header {padding: 0 10px 10px 10px;}
+.ydpicker-header-prev {
+    float: left;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.ydpicker-header-next {
+    float: right;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.ydpicker-header-month {
+    text-align: center;
+    margin: 0 10px;
+}
+.ydpicker-header-month span {
+    padding-right: 10px;
+    color: #0c92c9;
+    font-weight: bold;
+}
+.ydpicker-content {}
+.ydpicker-content table {
+    padding: 0;
+    margin: 0;
+    border-spacing: 1;
+    border-collapse: collapse;
+    text-align: center;
+    vertical-align: middle;
+}
+.ydpicker-content table>thead>tr>th {
+    width: 21px;
+    height: 21px;
+    padding: 0;
+    margin: 0;
+    background: #f1f1f1;
+    color: #545e66;
+    font-size: 10px;
+}
+.ydpicker-content table>thead>tr>th:first-child {padding-left: 10px;}
+.ydpicker-content table>thead>tr>th:last-child {padding-right: 10px;}
+.ydpicker-content table>tbody>tr>td:first-child {padding-left: 10px;}
+.ydpicker-content table>tbody>tr>td:last-child {padding-right: 10px;}
+.ydpicker-content table>tbody>tr>td>div {
+    width: 21px;
+    height: 21px;
+    color: #545e66;
+    font-size: 11px;
+    cursor: pointer;
+}
+.ydpicker-content table>tbody>tr>td.ydpicker-other-month>div {
+    color: #bdbdbe;
+    cursor: default;
+}
+.ydpicker-content table>tbody>tr>td.ydpicker-in-range>div {
+    background: #7cd8fe;
+    color: white;
+}
+.ydpicker-content table>tbody>tr>td:not(.ydpicker-other-month)>div:hover, .ydpicker-content table>tbody>tr>td.active>div {
+    background: #0c92c9;
+    color: white;
+}

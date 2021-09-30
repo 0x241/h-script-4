@@ -1,0 +1,67 @@
+// date, ip, rooturl, sitename
+// uid, name, login
+
+[_header]
+#date# (IP: #ip#)
+
+[_footer]
+С уважением, команда <a href="#rooturl#">#sitename#</a>
+
+[AdminIn.topic]
+Вход в панель управления
+[AdminIn.message]
+Администратор #login# [#uid#] вошел в систему
+
+[NewUser.topic]
+Новый пользователь
+[NewUser.message]
+Зарегистрирован новый пользователь #login# (#name#) [#uid#]
+
+[AddFundsError.topic]
+Ошибка при пополнении
+[AddFundsError.message]
+Неверный запрос: #request#
+Результат проверки: #result#
+Параметры SCI: #params#
+
+[AddFundsError2.topic]
+Ошибка при проведении пополнения
+[AddFundsError2.message]
+Заявка ##oid# не проведена: ошибка [#error#]
+
+[OperCASHIN.topic]
+Пополнение баланса
+[OperCASHIN.message]
+Пользователь #login# [#uid#] пополнил свой баланс на #sum# #curr# #psys# (batch: #batch#)
+
+[OperCASHOUT.topic]
+Вывод средств
+[OperCASHOUT.message]
+Пользователю #login# [#uid#] переведено #sum# #curr# #psys# (batch: #batch#)
+
+[OperRequired.topic]
+Операция требует обработки
+[OperRequired.message]
+Пользователь #login# [#uid#] создал операцию ##oid#, требующую обработки вручную
+Для просмотра деталей операции пройдите по <a href="#url#?id=#oid#">ссылке</a>
+
+[OperNotComplete.topic]
+Операция не выполнена
+[OperNotComplete.message]
+Система не смогла выполнить операцию ##oid#, созданную пользователем #login# [#uid#]
+Для просмотра деталей операции пройдите по <a href="#url#?id=#oid#">ссылке</a>
+
+[Support.topic]
+Запрос в поддержку
+// mail, cat, topic, text
+[Support.message]
+Адрес для ответа: #mail#
+
+Категория: #cat#
+Тема: #topic#
+#text#
+
+[WalletBalanceLow.topic]
+Баланс кошелька меньше порога
+[WalletBalanceLow.message]
+Баланс кошелька #cName# (#cCID#) = #cBal#, что меньше порога = #cBalMin#

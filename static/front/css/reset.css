@@ -1,0 +1,82 @@
+html, body, div, span, applet, object, iframe, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
+center,
+dl, dt, dd,
+fieldset, form, label, legend, caption,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+b, strong { font-weight: bold; }
+
+input {outline:0}
+
+html, body { height: 100%; min-width: 320px;}
+
+a { outline-width: 0; }
+
+button::-moz-focus-inner { border:0; padding:0 }
+
+.cfix:after, .clear {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  *zoom: 1;
+}
+
+.helper {
+  vertical-align:middle;
+  height:100%;
+  width:0px;
+
+  display:inline-block;
+  *display:inline;
+  *zoom:1;
+}
+
+img {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+
+  vertical-align: top;
+}
+
+.site {
+  min-height: 100%;
+  width: 100%;
+}
+
+* html .site {
+  height: 100%;
+}

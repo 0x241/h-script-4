@@ -1,0 +1,1 @@
+<?php$_auth = 0; // = 1 auth requiredrequire_once('module/auth.php');showPage();?>

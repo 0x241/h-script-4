@@ -1,0 +1,193 @@
+// date, ip, rooturl, sitename
+// uid, name, login
+
+[_header]
+Здравствуйте #name#!
+
+[_footer]
+С уважением, команда <a href="#rooturl#">#sitename#</a>
+
+[PassChanged.topic]
+Пароль сброшен
+// pass
+[PassChanged.message]
+Ваш пароль сброшен
+Ваш логин: #login#
+Ваш новый временный пароль: #pass#
+
+[PassChanged2.topic]
+Пароль изменен
+// pass
+[PassChanged2.message]
+Ваш пароль изменен
+Ваш логин: #login#
+Ваш новый пароль: #pass#
+
+[MailChanged.topic]
+E-mail подтвержден
+//
+[MailChanged.message]
+Этот адрес используется для аккаунта "#login#"
+
+[AskConfirmRSTPASS.topic]
+Подтверждение сброса пароля
+// code, url
+[AskConfirmRSTPASS.message]
+Для подтверждения сброса пароля для аккаунта "#login#" используйте код: <b>#code#</b>
+Введите его или просто перейдите по <a href="#url#?code=#code#">ссылке</a>
+
+[AskConfirmCHGMAIL.topic]
+Подтверждение смены адреса
+// code, url
+[AskConfirmCHGMAIL.message]
+Для подтверждения использования этого адреса для аккаунта "#login#" используйте код: <b>#code#</b>
+Введите его или просто перейдите по <a href="#url#?code=#code#">ссылке</a>
+
+[AskConfirmSECLOGIN.topic]
+Подтверждение входа в аккаунт
+// code, url
+[AskConfirmSECLOGIN.message]
+Зафиксирована смена IP-адреса.
+Для подтверждения входа в аккаунт "#login#" используйте код: <b>#code#</b>
+Введите его или просто перейдите по <a href="#url#?code=#code#">ссылке</a>
+
+[AskConfirmBFLOGIN.topic]
+Подтверждение входа в аккаунт
+// code, url
+[AskConfirmBFLOGIN.message]
+Пароль от аккаунта был неверно введен несколько раз подряд.
+Для подтверждения входа в аккаунт "#login#" используйте код: <b>#code#</b>
+Введите его или просто перейдите по <a href="#url#?code=#code#">ссылке</a>
+
+[AskConfirmREG.topic]
+Подтверждение регистрации
+// code, url
+[AskConfirmREG.message]
+Для подтверждения регистрации аккаунта "#login#" используйте код: <b>#code#</b>
+Введите его или просто перейдите по <a href="#url#?code=#code#">ссылке</a>
+
+[RegComplete.topic]
+Регистрация завершена
+// pin
+[RegComplete.message]
+Спасибо за регистрацию на нашем сайте #sitename#!
+Ваш логин: #login#
+//Ваш PIN-код: #pin#
+
+[RegComplete2.topic]
+Быстрая регистрация
+// pass, pin
+[RegComplete2.message]
+Спасибо за регистрацию на нашем сайте #sitename#!
+Ваш логин: #login#
+Ваш пароль: #pass#
+//Ваш PIN-код: #pin#
+
+[NewRef.topic]
+У Вас новый реферал
+// reflogin
+[NewRef.message]
+У Вас новый реферал - #reflogin#
+
+
+
+// All operations: oid, oper, cid, sum, curr, psys, cid2, sum2, curr2, psys2, params(), url
+
+[OperBONUS.topic]
+Бонус
+[OperBONUS.message]
+Вам начислен бонус #sum# #curr# #psys#
+Для просмотра деталей операции пройдите по <a href="#url#?id=#oid#">ссылке</a>
+
+[OperPENALTY.topic]
+Штраф
+[OperPENALTY.message]
+Вы оштрафованы на #sum# #curr# #psys#
+Для просмотра деталей операции пройдите по <a href="#url#?id=#oid#">ссылке</a>
+
+[OperCASHIN.topic]
+Пополнение баланса
+[OperCASHIN.message]
+Ваш баланс пополнен на #sum# #curr# #psys#
+Для просмотра деталей операции пройдите по <a href="#url#?id=#oid#">ссылке</a>
+
+[OperCASHOUT.topic]
+Вывод средств
+[OperCASHOUT.message]
+На Ваш кошелек #acc# #psys# перечислено #sum# #curr# (batch: #batch#)
+Для просмотра деталей операции пройдите по <a href="#url#?id=#oid#">ссылке</a>
+
+[OperEX.topic]
+Обмен средств
+[OperEX.message]
+Вами произведен обмен #sum# #curr# #psys# на #sum2# #curr2# #psys2# по курсу 1:#course# (batch: #batch#)
+Для просмотра деталей операции пройдите по <a href="#url#?id=#oid#">ссылке</a>
+
+[OperTR.topic]
+Перевод средств
+[OperTR.message]
+Вами отправлен перевод на #sum# #curr# #psys# пользователю "#to#" (batch: #batch#)
+Для просмотра деталей операции пройдите по <a href="#url#?id=#oid#">ссылке</a>
+
+[OperTRIN.topic]
+Поступление средств
+[OperTRIN.message]
+Вами получен перевод на #sum# #curr# #psys# от пользователя "#from#" (batch: #batch#)
+Для просмотра деталей операции пройдите по <a href="#url#?id=#oid#">ссылке</a>
+
+[OperREF.topic]
+Реферальское вознаграждение
+[OperREF.message]
+Вам начислено реферальское вознаграждение #sum# #curr# #psys# (реферал: #reflogin#)
+Для просмотра деталей операции пройдите по <a href="#url#?id=#oid#">ссылке</a>
+
+[OperGIVE.topic]
+Вклад
+[OperGIVE.message]
+Вами сделан вклад ##tag# на #sum# #curr# #psys#
+Для просмотра деталей операции пройдите по <a href="#url#?id=#oid#">ссылке</a>
+
+[OperTAKE.topic]
+Снятие
+[OperTAKE.message]
+Вам возвращено #sum# #curr# #psys# со вклада ##tag#
+Для просмотра деталей операции пройдите по <a href="#url#?id=#oid#">ссылке</a>
+
+[OperCALCIN.topic]
+Начисление
+[OperCALCIN.message]
+Вам начислено #sum# #curr# #psys# со вклада ##tag#
+Для просмотра деталей операции пройдите по <a href="#url#?id=#oid#">ссылке</a>
+
+[OperCALCOUT.topic]
+Списание
+[OperCALCOUT.message]
+С Вашего баланса списано #sum# #curr# #psys#
+Для просмотра деталей операции пройдите по <a href="#url#?id=#oid#">ссылке</a>
+
+
+
+// Messages
+
+[Notice.topic]
+Вам пришло уведомление
+//
+[Notice.message]
+Вам пришло уведомление с темой "#topic#" от пользователя "#from#"
+Для просмотра уведомления пройдите по <a href="#url#?id=#id#">ссылке</a>
+
+[NoticeToMail.topic]
+#topic#
+//
+[NoticeToMail.message]
+#message#
+
+[NoticeToMailRe.topic]
+Ответ на запрос
+//
+[NoticeToMailRe.message]
+Тема: #topic#
+#message#
+
+-----
+#remessage#

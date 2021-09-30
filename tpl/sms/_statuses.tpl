@@ -1,0 +1,22 @@
+{$sms_statuses = [
+		0 => $_TRANS['expects'],
+		1 => $_TRANS['Calculator'],
+		2 => $_TRANS['sent'],
+		3 => $_TRANS['delivered'],
+		4 => $_TRANS['error'],
+		9 => $_TRANS['postponed']
+] scope='global'}
+
+{$sms_errors = [
+		'low_balance' => $_TRANS['insufficient funds'],
+		'no_suitable_text' => $_TRANS['no suitable text'],
+		'from_wrong' => $_TRANS['invalid format sender'],
+		'to_wrong' => $_TRANS['invalid number format of the recipient'],
+		'msg_empty' => $_TRANS['is not defined text'],
+		'msg_too_long' => $_TRANS['text is too long'],
+		'S1' => $_TRANS['in line operator'],
+		'S0' => $_TRANS['preparations for sending'],
+		'E1' => $_TRANS['not delivered'],
+		'E2' => $_TRANS['Calculator'],
+		'E3' => $_TRANS['Calculator']
+] scope='global'}
