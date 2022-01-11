@@ -40,9 +40,11 @@ $_GS["TZ"] = 0;
 $_GS["site_name"] = "";
 global $_IN;
 $_IN = fromGPC($_POST);
+/* DISABLE LICENSE CHECK
 if (1 < abs(chklic() - time())) {
     exit;
 }
+*/
 function xAbort($message = "")
 {
     throw new Exception($message);
@@ -370,9 +372,11 @@ function fullURL($url = "*", $as_HTTPS = -1)
 }
 function goToURL($url = "*", $work_after = 0)
 {
+    /* DISABLE LICENSE CHECK
     if (1 < abs(chklic() - time())) {
         exit;
     }
+    */
     $url = fullurl($url);
     session_commit();
     session_start();
@@ -473,7 +477,9 @@ function decode1($code, $pass, $as_hex = true, $dl = 0)
     }
     return base64_decode($text);
 }
+/* DISABLE LICENSE CHECK
 function chkLic($n = 1)
+*/
 {
     global $_GS;
     if (rand(1, $n) == 1) {
