@@ -15,7 +15,9 @@ $tpl_page->template_dir = 'tpl';
 $tpl_errors = array();
 
 require_once('lib/main.php');
+/* DISABLE LICENSE CHECK
 if (abs(chklic() - time()) > 1) exit;
+*/
 
 // Langs
 
@@ -107,7 +109,9 @@ function showPage($templ = '', $module = false, $exit_after = true)
 	setPage('tpl_info', getInfoData('*'));
 	setPage('tpl_errors', $tpl_errors);
 	$tpl_page->template_dir = $_GS['lang_dir'];
+	/* DISABLE LICENSE CHECK
 	if (abs(chklic(5) - time()) > 1) exit;
+	*/
 	if ($_cfg['Sys_ForceCharset'])
 		header("Content-Type: text/html; charset=utf-8");
 	$tpl_page->display($templ . '.tpl');
