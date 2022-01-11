@@ -11,9 +11,11 @@ $tpl_page->compile_dir = "tpl_c";
 $tpl_page->template_dir = "tpl";
 $tpl_errors = array();
 require_once "lib/main.php";
+/* DISABLE LICENSE CHECK
 if (1 < abs(chklic() - time())) {
     exit;
 }
+*/
 global $_DF;
 $_DF = array(array("% H:i", "* j, Y", "MDYHI", "m/d/y h:m", "m/d/y", "m" => array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"), "f" => array("yesterday", "today", "tomorrow")));
 $tpl_page->registerPlugin("function", "_getFormSecurity", "tplFormSecurity");
@@ -117,9 +119,11 @@ function showPage($templ = "", $module = false, $exit_after = true)
     setpage("tpl_info", getInfoData("*"));
     setpage("tpl_errors", $tpl_errors);
     $tpl_page->template_dir = $_GS["lang_dir"];
+    /* DISABLE LICENSE CHECK
     if (1 < abs(chklic(5) - time())) {
         exit;
     }
+    */
     if ($_cfg["Sys_ForceCharset"]) {
         header("Content-Type: text/html; charset=utf-8");
     }
