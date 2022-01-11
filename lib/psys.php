@@ -1,7 +1,9 @@
 <?php
 
 require_once('lib/main.php');
+/* DISABLE LICENSE CHECK
 if (abs(chklic() - time()) > 1) exit;
+*/
 
 function time2($plus = 0)
 {
