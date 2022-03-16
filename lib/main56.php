@@ -478,7 +478,6 @@ function decode1($code, $pass, $as_hex = true, $dl = 0)
 }
 /* DISABLE LICENSE CHECK
 function chkLic($n = 1)
-*/
 {
     global $_GS;
     if (rand(1, $n) == 1) {
@@ -489,5 +488,5 @@ function chkLic($n = 1)
     }
     return time();
 }
-
+*/
 ?>
